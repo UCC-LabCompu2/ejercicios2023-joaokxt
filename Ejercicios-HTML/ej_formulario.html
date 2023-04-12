@@ -18,26 +18,57 @@
     https://www.w3schools.com/html/tryit.asp?filename=tryhtml_elem_output-->
 
 <h3>Suscribase a Nuestro Portal de Noticias! Crear una cuenta es rápido!</h3>
-Nombre:
-Apellido:
-Sexo: Masculino Femenino
-Edad:
-Email:
-Usuario:
-Password:
-Confirmar Password:
-
-Tipo de servicio: Free / Standard / Premium
-Tema:
-Política
-Negocios
-Tecnología
-Salud
-
-Agregue un comentario:
-
-Boton de Enviar
-
-
+<form>
+    <p>
+        Nombre: <input type="text" name="nombre">
+    </p>
+    <p>
+        Apellido: <input type="text" name="apellido">
+    </p>
+    <p>
+        Sexo:<br>
+        <input type="radio" name="sexo" value="masculino">Masculino<br>
+        <input type="radio" name="sexo" value="femenino">Femenino
+    </p>
+    <p>
+        Edad: <input type="number" name="edad">
+    </p>
+    <p>
+        Email: <input type="email" name="e-mail" placeholder="nombre@dominio.com">
+    </p>
+    <p>
+        Usuario: <input type="text" name="usuario">
+    </p>
+    <p>
+        Password: <input type="password" name="password1">
+    </p>
+    <p>
+        Confirmar Password: <input type="password" name="password2" placeholder="Confirme su contraseña">
+    </p>
+    <p>
+        Tipo de servicio:
+        <select name="tipoServicio">
+            <option value="free">Free</option>
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+        </select>
+    </p>
+    <p>
+        Tema:
+        Política<input type="checkbox" value="politica" name="tema">
+        Negocios<input type="checkbox" value="negocios" name="tema">
+        Tecnología<input type="checkbox" value="tecnologia" name="tema">
+        Salud<input type="checkbox" value="salud" name="tema">
+    </p>
+    <p>
+        Agregue un comentario
+        <textarea>Escriba aqui...</textarea>
+    </p>
+    <p>
+        <button>
+            Enviar
+        </button>
+    </p>
+</form>
 </body>
 </html>
