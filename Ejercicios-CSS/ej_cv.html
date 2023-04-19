@@ -2,38 +2,77 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>CV Nombre Apellido</title>
+    <title>CV João Terck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
+    <style>
+        body{
+            background: linear-gradient(to bottom, yellow, orange);
+            text-align: center;
+            font-family: 'Chivo Mono', monospace;
+        }
+        h1,h2,h3{
+            text-shadow: 1px 1px #ff8571;
+        }
+        div{
+            border: 2px solid #000000;
+            border-radius: 10px;
+            margin: 20px 50px;
+            padding: 10px 8px;
+            background: #e8e6bd;
+            opacity: 0.9;
+            box-shadow: 2px 2px #1bff00;
+        }
+        img{
+            width: 100px;
+        }
+        #imagen{
+            border: 0px;
+            box-shadow: 0px 0px;
+            float:left;
+            margin: 5px;
+        }
+        .curso{
+            background: #ffffff;
+            box-shadow: 0px 0px;
+        }
+    </style>
 </head>
 <body>
 
 <div>
-    <h1>Nombre Alumno</h1>
-    <h2>Ing. en Computacion</h2>
+    <div id="imagen">
+        <img src="imagenes/usuario.png">
+    </div>
+
+    <h1>João Klein Xavier Terck</h1>
+    <h2>Ing. en Sistemas</h2>
 </div>
 
 <div>
     <h3>Datos Personales</h3>
-    <p><span>Fecha de Nacimiento:</span> dd/mm/aaaa</p>
-    <p><span>Email:</span> email@email.com</p>
+    <p><span>Fecha de Nacimiento:</span> 22/04/2004</p>
+    <p><span>Email:</span> joaokx.terck@gmail.com</p>
 </div>
 
 <div>
     <h3>Formacion Academica</h3>
-    <p><span>Carrera:</span> Ingeniería XXXXX</p>
+    <p><span>Carrera:</span> Ingeniería de Sistemas</p>
     <p><span>Universidad:</span> Universidad Católica de Córdoba</p>
-    <p><span>Año de Ingreso:</span> 2018</p>
+    <p><span>Año de Ingreso:</span> 2022</p>
 </div>
 
 <div>
     <h3>Cursos</h3>
 
-    <div>
+    <div class="curso">
         <h4>Nombre Curso 1</h4>
         <p><span>Lugar:</span> Nombre Institución</p>
         <p><span>Año:</span> XXXX </p>
     </div>
 
-    <div>
+    <div class="curso">
         <h4>Nombre Curso 2</h4>
         <p><span>Lugar:</span> Nombre Institución</p>
         <p><span>Año:</span> XXXX </p>
