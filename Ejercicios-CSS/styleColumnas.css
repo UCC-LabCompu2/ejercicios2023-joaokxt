@@ -1,0 +1,22 @@
+#tituloPrincipal{
+    color: #3899e1;
+}
+.tituloNoticia{
+    font-size: 30px;
+}
+body{
+    font-family: Calibri;
+}
+a:link, a:visited{
+    color: #38b06e;
+}
+a:hover{
+    font-size: 1.4em;
+}
+a:active{
+    font-weight: bold;
+}
+article{
+    column-count: 2;
+    column-gap: 100px;
+}
