@@ -1,0 +1,11 @@
+body{
+    background-color: #3899e1;
+    background-image: url("imagenes/fondo_mario.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+h1{
+    color: #ffffff;
+}
