@@ -46,6 +46,11 @@ function conversorUnidades(id, valor){
     document.lasUnidades.unid_pulgada.value = pulgadas;
 }
 
+/**
+ * Permite convertir grados sexagesimales a radianes y viceversa
+ * @method conversorAngulos
+ * @param {string} id - Id del elemento en HTML
+ */
 function conversorAngulos(id){
     if(id=="grados"){
         let gr = document.getElementById("grados").value;
@@ -57,10 +62,60 @@ function conversorAngulos(id){
     }
 }
 
+/**
+ * Mostrar u ocultar divs
+ * @method mostrar_ocultar
+ * @param {string} valor
+ */
 function mostrar_ocultar(valor){
     if(valor==="val_mostrar"){
         document.getElementsByName("unDiv")[0].style.display = 'block';
     }else{
         document.getElementsByName("unDiv")[0].style.display = 'none';
     }
+}
+
+/**
+ * Suma 2 valores ingresador por usuario
+ * @method sumar
+ */
+let sumar = () => {
+    let num1, num2, res;
+    num1 = document.getElementById("nums1").value;
+    num2 = document.getElementById("nums2").value;
+    res = Number(num1) + Number(num2);
+    document.getElementById("totalS").value = res;
+}
+/**
+ * Resta 2 valores ingresador por usuario
+ * @method restar
+ */
+let restar = () => {
+    let num1, num2, res;
+    num1 = document.getElementById("numr1").value;
+    num2 = document.getElementById("numr2").value;
+    res = Number(num1)-Number(num2);
+    document.getElementById("totalR").value = res;
+}
+/**
+ * Multiplica 2 valores ingresador por usuario
+ * @method multiplicar
+ */
+let multiplicar = () => {
+    let num1, num2, res;
+    num1 = document.getElementById("numm1").value;
+    num2 = document.getElementById("numm2").value;
+    res = Number(num1)*Number(num2);
+    document.getElementById("totalM").value = res;
+}
+/**
+ * Divide 2 valores ingresador por usuario
+ * @method dividir
+ */
+let dividir = () => {
+    let num1, num2, res;
+    num1 = document.getElementById("numd1").value;
+    num2 = document.getElementById("numd2").value;
+    res = Number(num1)/Number(num2);
+    document.getElementById("totalD").value = res;
 }
