@@ -56,3 +56,11 @@ function conversorAngulos(id){
         document.getElementById("grados").value = rad*(180/Math.PI);
     }
 }
+
+function mostrar_ocultar(valor){
+    if(valor==="val_mostrar"){
+        document.getElementsByName("unDiv")[0].style.display = 'block';
+    }else{
+        document.getElementsByName("unDiv")[0].style.display = 'none';
+    }
+}
