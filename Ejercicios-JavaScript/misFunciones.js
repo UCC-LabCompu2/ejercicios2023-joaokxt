@@ -6,33 +6,53 @@
  */
 
 function conversorUnidades(id, valor){
+    let metros, yardas, pies, pulgadas;
     if(isNaN(valor)){
-        document.lasUnidades.unid_yarda.value = "";
-        document.lasUnidades.unid_pie.value = "";
-        document.lasUnidades.unid_pulgada.value = "";
-        document.lasUnidades.unid_metro.value = "";
+        yardas = "";
+        pies = "";
+        pulgadas = "";
+        metros = "";
         alert("Se ingresó un valor inválido en " + id);
     }
     else{
         if(id=="metro"){
-            document.lasUnidades.unid_yarda.value = valor*1.094;
-            document.lasUnidades.unid_pie.value = valor*3.28084;
-            document.lasUnidades.unid_pulgada.value = valor*39.3701;
+            metros=valor;
+            yardas = valor*1.094;
+            pies = valor*3.28084;
+            pulgadas = valor*39.3701;
         }
         if(id=="yarda"){
-            document.lasUnidades.unid_metro.value = valor/1.094;
-            document.lasUnidades.unid_pie.value = valor*3;
-            document.lasUnidades.unid_pulgada.value = valor*36;
+            metros = valor/1.094;
+            yardas=valor;
+            pies = valor*3;
+            pulgadas = valor*36;
         }
         if(id=="pie"){
-            document.lasUnidades.unid_metro.value = valor/3.28084;
-            document.lasUnidades.unid_yarda.value = valor/3;
-            document.lasUnidades.unid_pulgada.value = valor*12;
+            metros = valor/3.28084;
+            yardas = valor/3;
+            pies=valor;
+            pulgadas = valor*12;
         }
         if(id=="pulgada"){
-            document.lasUnidades.unid_metro.value = valor/39.3701;
-            document.lasUnidades.unid_yarda.value = valor/36;
-            document.lasUnidades.unid_pie.value = valor/12;
+            metros = valor/39.3701;
+            yardas = valor/36;
+            pies = valor/12;
+            pulgadas=valor;
         }
+    }
+    document.lasUnidades.unid_metro.value = metros;
+    document.lasUnidades.unid_yarda.value = yardas;
+    document.lasUnidades.unid_pie.value = pies;
+    document.lasUnidades.unid_pulgada.value = pulgadas;
+}
+
+function conversorAngulos(id){
+    if(id=="grados"){
+        let gr = document.getElementById("grados").value;
+        document.getElementById("radianes").value = gr*(Math.PI/180);
+    }
+    if(id=="radianes"){
+        let rad = document.getElementById("radianes").value;
+        document.getElementById("grados").value = rad*(180/Math.PI);
     }
 }
