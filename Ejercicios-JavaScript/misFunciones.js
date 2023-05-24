@@ -133,3 +133,26 @@ let dividir = () => {
     res = Number(num1)/Number(num2);
     document.getElementById("totalD").value = res;
 }
+
+/**
+ * Genera URL para enviar datos de primeraWeb a segundaWeb
+ * @method generarURL
+ */
+let generarURL = () => {
+    const distancia = document.getElementById("distancia").value;
+    const unidad = document.getElementsByName("unidades")[0].value;
+    const urlNueva = `segundaWeb.html#${distancia}#${unidad}`;
+    window.open(urlNueva, "_self");
+}
+
+/**
+ * Recibe datos en segundaWeb que están en el link generado por generarURL()
+ * @method cargarValores
+ */
+let cargarValores = () => {
+    let urlNueva = window.location.href;
+    urlNueva = urlNueva.split('#');
+    const distancia = urlNueva[1];
+    const unidad = urlNueva[2];
+    document.getElementById("dist").value = `${distancia} ${unidad}`;
+}
