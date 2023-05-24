@@ -156,3 +156,17 @@ let cargarValores = () => {
     const unidad = urlNueva[2];
     document.getElementById("dist").value = `${distancia} ${unidad}`;
 }
+
+let guardarDatosLS = () => {
+    const distancia = document.getElementById("distancia").value;
+    const unidad = document.getElementsByName("unidades")[0].value;
+    localStorage.setItem("distanciaLS", dist);
+    localStorage.setItem("unidadLS", unidad);
+    window.open("web2.html");
+}
+
+let tomarDatosLS = () => {
+    const cantidad = localStorage.getItem("distanciaLS");
+    const unidad = localStorage.getItem("unidadLS");
+    document.getElementById("dist").value = `${cantidad} ${unidad}`;
+}
