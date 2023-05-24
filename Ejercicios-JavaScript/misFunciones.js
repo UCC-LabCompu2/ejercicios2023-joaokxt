@@ -184,3 +184,25 @@ let dibujarCirculoCuadrado = () => {
     ctx.fill();
     ctx.stroke();
 }
+
+var bandera;
+let dibujar = () => {
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let posX = event.clientX;
+    let posY = event.clientY;
+
+    canvas.onmousedown = function (){bandera=true};
+    canvas.onmouseup = function (){bandera=false};
+    if(bandera){
+        ctx.fillRect(posX, posY, 5, 5);
+        ctx.fill();
+    }
+}
+
+let limpiarCanvas = () => {
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = canvas.width;
+}
