@@ -7,6 +7,9 @@
 
 function conversorUnidades(id, valor){
     let metros, yardas, pies, pulgadas;
+    if(valor.includes(",")){
+        valor = valor.replace(",",".");
+    }
     if(isNaN(valor)){
         yardas = "";
         pies = "";
@@ -16,34 +19,34 @@ function conversorUnidades(id, valor){
     }
     else{
         if(id=="metro"){
-            metros=valor;
+            metros = valor;
             yardas = valor*1.094;
             pies = valor*3.28084;
             pulgadas = valor*39.3701;
         }
         if(id=="yarda"){
             metros = valor/1.094;
-            yardas=valor;
+            yardas = valor;
             pies = valor*3;
             pulgadas = valor*36;
         }
         if(id=="pie"){
             metros = valor/3.28084;
             yardas = valor/3;
-            pies=valor;
+            pies = valor;
             pulgadas = valor*12;
         }
         if(id=="pulgada"){
             metros = valor/39.3701;
             yardas = valor/36;
             pies = valor/12;
-            pulgadas=valor;
+            pulgadas = valor;
         }
     }
-    document.lasUnidades.unid_metro.value = metros;
-    document.lasUnidades.unid_yarda.value = yardas;
-    document.lasUnidades.unid_pie.value = pies;
-    document.lasUnidades.unid_pulgada.value = pulgadas;
+    document.lasUnidades.unid_metro.value = Math.round(metros*100)/100;
+    document.lasUnidades.unid_pie.value = pies.toFixed(2);
+    document.lasUnidades.unid_pulgada.value = pulgadas.toFixed(2);
+    document.lasUnidades.unid_yarda.value = Math.round(yardas*100)/100;
 }
 
 /**
