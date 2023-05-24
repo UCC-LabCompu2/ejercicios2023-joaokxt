@@ -170,3 +170,17 @@ let tomarDatosLS = () => {
     const unidad = localStorage.getItem("unidadLS");
     document.getElementById("dist").value = `${cantidad} ${unidad}`;
 }
+
+let dibujarCirculoCuadrado = () => {
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    const anchoMax = canvas.width;
+    const alturaMax = canvas.height;
+    const margen = 10;
+    ctx.fillStyle = "#000000";
+    ctx.arc(anchoMax/2, alturaMax/2, 100, 0, 2*Math.PI);
+    ctx.fillRect(0+margen, alturaMax-100-margen, 200, 100);
+    ctx.fill();
+    ctx.stroke();
+}
