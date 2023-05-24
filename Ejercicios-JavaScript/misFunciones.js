@@ -79,6 +79,17 @@ function mostrar_ocultar(valor){
 }
 
 /**
+ * Blanquea el campo al ingresar un valor no numérico
+ * @method verLetra
+ * @param {string} id
+ * @param value
+ */
+let verLetra = (id, value) => {
+    if(isNaN(value)){
+        document.getElementById(id).value = " ";
+    }
+}
+/**
  * Suma 2 valores ingresador por usuario
  * @method sumar
  */
@@ -87,7 +98,7 @@ let sumar = () => {
     num1 = document.getElementById("nums1").value;
     num2 = document.getElementById("nums2").value;
     res = Number(num1) + Number(num2);
-    document.getElementById("totalS").value = res;
+    document.getElementById("totalS").innerHTML = res;
 }
 /**
  * Resta 2 valores ingresador por usuario
