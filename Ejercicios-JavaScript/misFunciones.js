@@ -226,16 +226,29 @@ let dibujarCuadriculado = () => {
         ctx.stroke();
         i=i+20;
     }
-    //Eje X
+
     ctx.beginPath();
     ctx.moveTo(0,300);
     ctx.lineTo(1000,300);
     ctx.strokeStyle = "#FA5858";
     ctx.stroke();
-    //Eje Y
     ctx.beginPath();
     ctx.moveTo(500,0);
     ctx.lineTo(500,600);
     ctx.strokeStyle = "#FA5858";
     ctx.stroke();
+}
+
+let dibujarImagen = (posX, posY) => {
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let img;
+    img = new Image();
+    img.src = "images/auto.png";
+
+    //Dibujar img solo cuando este cargada
+    img.onload = function () {
+        ctx.drawImage(img, posX, posY);
+    }
 }
