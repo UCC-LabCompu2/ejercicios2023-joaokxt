@@ -296,6 +296,7 @@ let animarAuto = () => {
     img.onload = function () {
         canvas.width = canvas.width;
         ctx.drawImage(img, x, 100);
+        requestAnimationFrame(animarAuto);
     }
 
     x+=dx;
@@ -304,3 +305,6 @@ let animarAuto = () => {
     }
 }
 
+let animarNuevo = () => {
+    requestAnimationFrame(animarAuto);
+}
