@@ -253,6 +253,16 @@ let dibujarCuadriculado = () => {
     ctx.stroke();
 }
 
+let abrirDialog = () => {
+    const dialog = document.getElementById("errorDialog");
+    dialog.showModal();
+}
+
+let cerrarDialog = () => {
+    const dialog = document.getElementById("errorDialog");
+    dialog.close();
+}
+
 let dibujarImagen = (posX, posY) => {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
@@ -273,12 +283,24 @@ let dibujarImagen = (posX, posY) => {
     }
 }
 
-let abrirDialog = () => {
-    const dialog = document.getElementById("errorDialog");
-    dialog.showModal();
+var x = 0;
+var dx = 2;
+let animarAuto = () => {
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+
+    let img;
+    img = new Image();
+    img.src = "images/auto.png";
+
+    img.onload = function () {
+        canvas.width = canvas.width;
+        ctx.drawImage(img, x, 100);
+    }
+
+    x+=dx;
+    if(x>=canvas.width){
+        x = 0;
+    }
 }
 
-let cerrarDialog = () => {
-    const dialog = document.getElementById("errorDialog");
-    dialog.close();
-}
