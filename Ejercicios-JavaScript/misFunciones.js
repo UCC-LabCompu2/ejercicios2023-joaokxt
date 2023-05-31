@@ -186,7 +186,7 @@ let dibujarCirculoCuadrado = () => {
 }
 
 var bandera;
-let dibujar = () => {
+let dibujar = (event) => {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
 
@@ -205,4 +205,37 @@ let limpiarCanvas = () => {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
     canvas.width = canvas.width;
+}
+
+let dibujarCuadriculado = () => {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    //Dibuja lineas horizontales
+    for(var i=0; i<600;){
+        ctx.moveTo(0,i);
+        ctx.lineTo(1000,i);
+        ctx.strokeStyle = "#D8D8D8";
+        ctx.stroke();
+        i=i+20;
+    }
+    //Dibuja lineas verticales
+    for(var i=0; i<1000;){
+        ctx.moveTo(i,0);
+        ctx.lineTo(i,600);
+        ctx.strokeStyle = "#D8D8D8";
+        ctx.stroke();
+        i=i+20;
+    }
+    //Eje X
+    ctx.beginPath();
+    ctx.moveTo(0,300);
+    ctx.lineTo(1000,300);
+    ctx.strokeStyle = "#FA5858";
+    ctx.stroke();
+    //Eje Y
+    ctx.beginPath();
+    ctx.moveTo(500,0);
+    ctx.lineTo(500,600);
+    ctx.strokeStyle = "#FA5858";
+    ctx.stroke();
 }
