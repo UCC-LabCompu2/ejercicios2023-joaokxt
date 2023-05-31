@@ -208,23 +208,37 @@ let limpiarCanvas = () => {
 }
 
 let dibujarCuadriculado = () => {
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-    //Dibuja lineas horizontales
-    for(var i=0; i<600;){
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
+    ctx.font="10pt Times New Roman";
+    ctx.fillStyle = "red";
+
+    let yMax = 600;
+    let xMax = 1000;
+    let ejeY = -25;
+    let ejeX = -15;
+    let paso = 20;
+    let despl = 2;
+
+    //Lineas horizontales
+    for(var i=0; i<yMax; i+=paso){
         ctx.moveTo(0,i);
-        ctx.lineTo(1000,i);
+        ctx.lineTo(xMax,i);
         ctx.strokeStyle = "#D8D8D8";
+        // A cada linea se escribe el numero ejeX, a la mitad de la misma, corrida despl unidades en x en la coordenada y=i+4
+        ctx.fillText(ejeX, xMax/2+despl, i+4);
+        ejeX += 1;
         ctx.stroke();
-        i=i+20;
     }
-    //Dibuja lineas verticales
-    for(var i=0; i<1000;){
+
+    for(var i=0; i<xMax; i+=paso){
         ctx.moveTo(i,0);
-        ctx.lineTo(i,600);
+        ctx.lineTo(i,yMax);
         ctx.strokeStyle = "#D8D8D8";
         ctx.stroke();
-        i=i+20;
+        ctx.fillText(ejeY, i, yMax/2-6)
+        ejeY += 1;
+        ctx.stroke();
     }
 
     ctx.beginPath();
@@ -243,12 +257,28 @@ let dibujarImagen = (posX, posY) => {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
 
-    let img;
-    img = new Image();
-    img.src = "images/auto.png";
+    //Limpiar canvas
+    canvas.width = canvas.width;
+    if(posX<0 || posY<0 ||posX>=canvas.width || posY>=canvas.height){
+        abrirDialog();
+    }else{
+        let img;
+        img = new Image();
+        img.src = "images/auto.png";
 
-    //Dibujar img solo cuando este cargada
-    img.onload = function () {
-        ctx.drawImage(img, posX, posY);
+        //Dibujar img solo cuando este cargada
+        img.onload = function () {
+            ctx.drawImage(img, posX, posY);
+        }
     }
+}
+
+let abrirDialog = () => {
+    const dialog = document.getElementById("errorDialog");
+    dialog.showModal();
+}
+
+let cerrarDialog = () => {
+    const dialog = document.getElementById("errorDialog");
+    dialog.close();
 }
