@@ -1,0 +1,14 @@
+@media (max-width: 600px){
+    body{
+        column-count: 1;
+    }
+}
+@media (min-width: 601px){
+    body{
+        column-count: 3;
+    }
+}
+
+img{
+    width: 100%;
+}
